@@ -5,8 +5,8 @@ import java.io.PrintStream
 class TeamCityReporter(val out: PrintStream) : Reporter {
     override fun onLintError(file: String, err: LintError, corrected: Boolean) {
         if (!corrected) {
-            val message = "${file}:${err.line}${":${"${err.col}:".let { String.format("%-4s", it) }}"} ${err.detail} (${err.ruleId})"
-            out.println("##teamcity[message text='$message' status='FAILURE']")
+            out.println("##teamcity[inspectionType id='${err.ruleId}' name='Name ${err.ruleId}' description='description not provided>' category='category not provided']")
+            out.println("##teamcity[inspection typeId='${err.ruleId}' message='${err.detail}' file='${file}' line='${err.line}' SEVERITY='WARNING']")
         }
     }
 }
