@@ -1,1 +1,0 @@
-/Users/alexanderbatten/Personal/ktlint-teamcity-reporter/build/classes/kotlin/main/TeamCityReporter.class:/Users/alexanderbatten/Personal/ktlint-teamcity-reporter/build/classes/kotlin/main/TeamCityReporterProvider.class
