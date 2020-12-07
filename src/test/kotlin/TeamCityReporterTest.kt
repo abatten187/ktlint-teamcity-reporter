@@ -24,8 +24,9 @@ class TeamCityReporterTest {
         val output = String(out.toByteArray())
 
         assertEquals(
+            "##teamcity[inspectionType id='meaning-of-life' name='Name meaning-of-life' description='description not provided>' category='category not provided']\n" +
+                    "##teamcity[inspection typeId='meaning-of-life' message='This line is the meaning of life' file='/MeaningOfLifeBuilder.kt' line='42' SEVERITY='WARNING']\n",
             output,
-            "##teamcity[message text='/MeaningOfLifeBuilder.kt:42:1:   This line is the meaning of life (meaning-of-life)' status='FAILURE']\n"
         )
     }
 
